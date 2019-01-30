@@ -1,0 +1,41 @@
+﻿<Window x:Class="WindowsBackup.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WindowsBackup"
+        mc:Ignorable="d"
+        Title="Windows Backup" Height="350" Width="525" 
+        Closing="Window_Closing" Loaded="Window_Loaded" 
+        ShowInTaskbar="False" FontSize="14"
+        StateChanged="Window_StateChanged">
+
+
+  <DockPanel>
+    <Menu DockPanel.Dock="Top">
+      <MenuItem Header="_Menu">
+        <MenuItem Header="Check All Backups" Click="CheckAllBackups_menuItem_Click" />
+        <MenuItem Header="Output Messages">
+          <MenuItem Header="Clear" Click="ClearMessages_menuItem_Click" />
+          <MenuItem Header="Word Wrap" IsCheckable="True" Name="WordWrap_menuItem"
+                    Click="WordWrap_menuItem_Click" />
+        </MenuItem>        
+        <Separator />
+        <MenuItem Header="Setup..." Click="Setup_menuItem_Click" />
+        <MenuItem Header="Restore..." Click="Restore_menuItem_Click" />
+        <MenuItem Header="Tools">
+          <MenuItem Header="Compare..." Click="Compare_menuItem_Click" />
+          <MenuItem Header="File Name Registration..." Click="FNR_menuItem_Click" />
+        </MenuItem>
+        
+        
+        
+      </MenuItem>
+    </Menu>
+
+    <TextBox AcceptsReturn="True" Name="Output_tb" IsReadOnly="True" 
+             HorizontalScrollBarVisibility="Auto"
+             VerticalScrollBarVisibility="Auto" />
+
+  </DockPanel>
+</Window>

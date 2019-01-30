@@ -1,0 +1,97 @@
+﻿<Page x:Class="WindowsBackup.Cloud_Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WindowsBackup"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="500"
+      Title="Cloud_Page" FontSize="14" >
+
+  <StackPanel Margin="10">
+    <GroupBox Header="New Cloud Account" BorderThickness="2" BorderBrush="DarkGray">
+      <StackPanel>
+        <ComboBox Name="CloudType_cb" Margin="5" 
+                  SelectionChanged="CloudType_cb_SelectionChanged">
+          <ComboBoxItem>AWS S3</ComboBoxItem>
+          <ComboBoxItem>Azure Blob</ComboBoxItem>
+          <ComboBoxItem>GCP Storage</ComboBoxItem>
+        </ComboBox>
+
+        <Grid Name="AWS_grid">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition />
+          </Grid.ColumnDefinitions>
+
+          <TextBlock Margin="5" TextAlignment="Right" 
+                     VerticalAlignment="Center">Access ID</TextBlock>
+          <TextBox Name="ID_tb" Margin="5" Grid.Column="1"></TextBox>
+
+          <TextBlock  Margin="5" Grid.Row="1" TextAlignment="Right" 
+                      VerticalAlignment="Center">Secret Key</TextBlock>
+          <TextBox Name="SecretKey_tb" Margin="5" Grid.Row="1" Grid.Column="1"></TextBox>
+
+          <TextBlock  Margin="5" Grid.Row="2" TextAlignment="Right" 
+                      VerticalAlignment="Center">Region</TextBlock>
+          <TextBox Name="Region_tb" Margin="5" Grid.Row="2" Grid.Column="1"></TextBox>
+        </Grid>
+
+        <TextBlock Name="LongConfigStr_text" Margin="5">
+          Connection String or Credentials (JSON):
+        </TextBlock>
+        <TextBox Name="LongConfigStr_tb" AcceptsReturn="True" TextWrapping="NoWrap" 
+                 Height="150" Margin="5" HorizontalScrollBarVisibility="Auto"
+                 VerticalScrollBarVisibility="Auto"></TextBox>
+
+        <Separator Name="Test_sep"/>
+
+        <DockPanel>
+          <TextBlock Name="BucketName_text" Margin="5" DockPanel.Dock="Left" 
+                     VerticalAlignment="Center">Bucket Name</TextBlock>
+          <Button Name="Test_btn" HorizontalAlignment="Center" 
+                  DockPanel.Dock="Right" Margin="5"
+                  Padding="15, 3, 15, 3" Click="Test_btn_Click">Test</Button>
+          <TextBox Name="BucketName_tb" Margin="5"></TextBox>
+        </DockPanel>
+                
+        <TextBlock Name="Test_text" Margin="5"></TextBlock>
+
+        <DockPanel>
+          <TextBlock Name="AccountName_text" Margin="5" DockPanel.Dock="Left" 
+                     VerticalAlignment="Center">Account Name</TextBlock>
+          <Button Name="Add_btn" HorizontalAlignment="Center" 
+                  DockPanel.Dock="Right" Margin="5"
+                  Padding="15, 3, 15, 3" Click="Add_btn_Click">Add</Button>
+          <TextBox Name="AccountName_tb" Margin="5"></TextBox>
+        </DockPanel>
+        
+
+      </StackPanel>
+    </GroupBox>
+
+    <TextBlock Name="ExistingClouds_text" Margin="5, 15, 0, 0">
+      Existing Cloud Accounts:
+    </TextBlock>
+
+    <ListBox Name="ExistingClouds_lb" MaxHeight="200" Margin="5"
+             SelectionChanged="ExistingClouds_lb_SelectionChanged"/>
+
+    <DockPanel>
+      <TextBlock Name="BucketName2_text" Margin="5" DockPanel.Dock="Left" 
+                     VerticalAlignment="Center">Bucket Name</TextBlock>
+      <Button Name="TestExisting_btn" HorizontalAlignment="Center" 
+                  DockPanel.Dock="Right" Margin="5"
+                  Padding="15, 3, 15, 3" Click="TestExisting_btn_Click">Test</Button>
+      <TextBox Name="BucketName2_tb" Margin="5"></TextBox>
+    </DockPanel>
+
+    <TextBlock Name="TestExisting_text"></TextBlock>
+
+  </StackPanel>
+</Page>

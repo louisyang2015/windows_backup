@@ -1,0 +1,40 @@
+﻿<Window x:Class="WindowsBackup.SetupWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WindowsBackup"
+        mc:Ignorable="d"
+        Title="Setup" Height="625" Width="750"
+        FontSize="14" Closing="Window_Closing">
+
+  <DockPanel>
+    <Menu DockPanel.Dock="Top">
+      <MenuItem Header="_Menu">
+        <MenuItem Header="Save and Exit" Click="Save_menuItem_Click" />
+      </MenuItem>
+    </Menu>
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="1*" />
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="2*" />
+      </Grid.ColumnDefinitions>
+
+      <TreeView Name="NavPane_tv" />
+
+      <GridSplitter Grid.Column="1" Width="8" VerticalAlignment="Stretch" 
+                  HorizontalAlignment="Center" />
+
+      <ScrollViewer HorizontalScrollBarVisibility="Disabled" 
+                  VerticalScrollBarVisibility="Auto" Grid.Column="2">
+        <Frame Name="Output_frame" NavigationUIVisibility="Hidden"
+             Grid.Column="2"/>
+      </ScrollViewer>
+      
+      
+    </Grid>
+  </DockPanel>
+
+
+</Window>

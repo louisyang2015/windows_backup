@@ -1,0 +1,92 @@
+﻿<Window x:Class="WindowsBackup.Restore_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WindowsBackup"
+        mc:Ignorable="d"
+        Title="Restore" Height="600" Width="500" FontSize="14"
+        Loaded="Window_Loaded">
+  
+  <ScrollViewer VerticalScrollBarVisibility="Auto" 
+                HorizontalScrollBarVisibility="Disabled">
+    <StackPanel>
+
+      <!-- Available Archives: -->
+
+      <TextBlock Margin="5">Available Archives:</TextBlock>
+      <ListBox Margin="25, 5, 5, 5" MinHeight="48" MaxHeight="192"
+               Name="RestoreNames_lb" SelectionMode="Multiple" /> 
+
+      <Grid Margin="25, 5, 5, 5">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition />
+          <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Button HorizontalAlignment="Center" Padding="15, 5, 15, 5"
+                VerticalAlignment="Center" Click="GetInfo_btn_Click"
+                Name="GetInfo_btn">Get Information</Button>
+        <CheckBox Grid.Column="1" HorizontalAlignment="Center"
+                  VerticalAlignment="Center" Name="GetFileNames_cb">Get file names</CheckBox>
+      </Grid>
+
+      <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+        <TextBlock Margin="5" VerticalAlignment="Center" FontSize="18"
+                   Name="RestoreInfo_text" HorizontalAlignment="Center">
+          Retrieving restore information.</TextBlock>
+        <Button Padding="15, 5, 15, 5" Margin="25, 5, 5, 5"
+                Name="ShowFileNames_btn" VerticalAlignment="Center"
+                Click="ShowFileNames_btn_Click">Show File Names</Button>
+      </StackPanel>
+
+      <!-- Destination options: -->
+      
+      <TextBlock Margin="5, 15, 5, 5" Name="ChooseDestination_text">Destination options:</TextBlock>
+      <StackPanel>
+        <RadioButton Margin="25, 5, 5, 5" Name="MultiDestination_rbtn" IsChecked="True"
+                     Checked="Destination_rbtn_Checked">
+          Specify where each embedded prefix maps to</RadioButton>
+        <RadioButton Margin="25, 5, 5, 5" Name="SingleDestination_rbtn" 
+                     Checked="Destination_rbtn_Checked">
+          All restored files go under the same directory</RadioButton>
+      </StackPanel>
+      
+      <DataGrid Margin="25, 5, 5, 5" MaxHeight="192"
+                Name="EmbeddedPrefix_datagrid" AutoGenerateColumns="False" 
+                CanUserDeleteRows="True" CanUserAddRows="False">
+        <DataGrid.Columns>
+          <DataGridTextColumn Header="Embedded Prefix" Binding="{Binding Prefix}" />
+          <DataGridTextColumn Header="Destination" Binding="{Binding Destination}" />
+        </DataGrid.Columns>
+      </DataGrid>
+
+      <DockPanel>
+        <Button DockPanel.Dock="Right" Padding="15, 5, 15, 5" 
+                Margin="10, 5, 5, 5" Name="BaseDestination_btn"
+                Click="BaseDestination_btn_Click">Browse</Button>
+        <TextBox Name="BaseDestination_tb" Margin="25, 5, 5, 5" 
+                 VerticalAlignment="Center" />
+      </DockPanel>
+      
+      <!-- Choose file name registration file -->
+
+      <TextBlock Margin="5, 15, 5, 5" Name="FNR_Path_text">Specify file name registration location:</TextBlock>
+
+      <DockPanel>
+        <Button DockPanel.Dock="Right" Padding="15, 5, 15, 5" 
+                Margin="10, 5, 5, 5" Name="FNR_Path_btn"
+                Click="FNR_Path_btn_Click">Browse</Button>
+        <TextBox Margin="25, 5, 5, 5" VerticalAlignment="Center" 
+                 Name="FNR_Path_tb"/>
+      </DockPanel>
+
+      <Button FontSize="18" Padding="15, 5, 15, 5" HorizontalAlignment="Center"
+              Margin="15" Name="StartRestore_btn" Click="StartRestore_btn_Click">
+        Start Restore</Button>
+
+      <TextBlock Margin="15" TextAlignment="Center" FontSize="18"
+                 Name="RestoreStatus_text">Restoring files.</TextBlock>
+
+    </StackPanel>
+  </ScrollViewer>
+</Window>

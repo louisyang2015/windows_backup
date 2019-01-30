@@ -1,0 +1,35 @@
+﻿<Window x:Class="WindowsBackup.FNR_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WindowsBackup"
+        mc:Ignorable="d"
+        Title="File Name Registration" Height="150" Width="550" FontSize="14"
+        Loaded="Window_Loaded">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto" />
+      <ColumnDefinition/>
+      <ColumnDefinition Width="Auto" />
+    </Grid.ColumnDefinitions>
+
+    <TextBlock Grid.Row="0" Grid.Column="0" Margin="5" 
+               VerticalAlignment="Center"> Original File Name</TextBlock>
+    <TextBox Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"
+             Margin="5" Name="Path_tb" />
+    <Button Grid.Row="0" Grid.Column="2" Padding="15, 5, 15, 5"
+            Margin="5" Click="GetInfo_btn_Click" >Get Info</Button>
+
+    <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="5"
+               Name="Info_text" />
+    <Button Grid.Row="1" Grid.Column="2" VerticalAlignment="Bottom"
+            Padding="15, 5, 15, 5" Margin="5" Name="Delete_btn"
+            Click="Delete_btn_Click">Delete</Button>
+
+  </Grid>
+</Window>

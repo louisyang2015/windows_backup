@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2024
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsBackup", "WindowsBackup\WindowsBackup.csproj", "{6D255CA0-0560-4284-9327-29E97EF2B09E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsBackup_Console", "WindowsBackup_Console\WindowsBackup_Console.csproj", "{F1E95D85-8962-4A0F-A26F-F6D54C8692B3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6D255CA0-0560-4284-9327-29E97EF2B09E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D255CA0-0560-4284-9327-29E97EF2B09E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D255CA0-0560-4284-9327-29E97EF2B09E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D255CA0-0560-4284-9327-29E97EF2B09E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1E95D85-8962-4A0F-A26F-F6D54C8692B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1E95D85-8962-4A0F-A26F-F6D54C8692B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1E95D85-8962-4A0F-A26F-F6D54C8692B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1E95D85-8962-4A0F-A26F-F6D54C8692B3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C202FD91-D9A1-4A2B-9C74-F3EB86493877}
+	EndGlobalSection
+EndGlobal
